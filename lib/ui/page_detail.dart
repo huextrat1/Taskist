@@ -269,68 +269,7 @@ class _DetailPageState extends State<DetailPage> {
                               return new Slidable(
                                 delegate: new SlidableBehindDelegate(),
                                 actionExtentRatio: 0.25,
-                                child: GestureDetector(
-                                  onTap: () {
-                                    Firestore.instance
-                                        .collection(widget.user.uid)
-                                        .document(widget.currentList.keys
-                                            .elementAt(widget.i))
-                                        .updateData({
-                                      listElement.elementAt(i).name:
-                                          !listElement.elementAt(i).isDone
-                                    });
-                                  },
-                                  child: Container(
-                                    height: 50.0,
-                                    color: listElement.elementAt(i).isDone
-                                        ? Color(0xFFF0F0F0)
-                                        : Color(0xFFFCFCFC),
-                                    child: Padding(
-                                      padding: EdgeInsets.only(left: 50.0),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: <Widget>[
-                                          Icon(
-                                            listElement.elementAt(i).isDone
-                                                ? FontAwesomeIcons.checkSquare
-                                                : FontAwesomeIcons.square,
-                                            color: listElement
-                                                    .elementAt(i)
-                                                    .isDone
-                                                ? currentColor
-                                                : Colors.black,
-                                            size: 20.0,
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsets.only(left: 30.0),
-                                          ),
-                                          Flexible(
-                                            child: Text(
-                                              listElement.elementAt(i).name,
-                                              overflow: TextOverflow.ellipsis,
-                                              maxLines: 1,
-                                              style: listElement
-                                                      .elementAt(i)
-                                                      .isDone
-                                                  ? TextStyle(
-                                                      decoration: TextDecoration
-                                                          .lineThrough,
-                                                      color: currentColor,
-                                                      fontSize: 27.0,
-                                                    )
-                                                  : TextStyle(
-                                                      color: Colors.black,
-                                                      fontSize: 27.0,
-                                                    ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
+                                
                                 secondaryActions: <Widget>[
                                   new IconSlideAction(
                                     caption: 'Delete',
