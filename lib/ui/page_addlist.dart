@@ -86,6 +86,8 @@ class _NewTaskPageState extends State<NewTaskPage> {
             .document(listNameController.text.toString().trim())
             .setData({
           "color": currentColor.value.toString(),
+          "date": DateTime.now().millisecondsSinceEpoch
+
         });
 
         listNameController.clear();
